@@ -26,7 +26,8 @@ router.register(r'groups', views.GroupViewSet)
 
 # wire up API
 urlpatterns = [
+    url(r'^api/o/', include('oauth2_provider.urls',)),
     url(r'^api/', include(router.urls)),
     url(r"^api/admin/", admin.site.urls),
-    url(r'^api/o/', include('oauth2_provider.urls',)),
+
 ]
