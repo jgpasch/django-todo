@@ -25,7 +25,7 @@ SECRET_KEY = 'n#-h_x99b2y^^hs!0u-h$p0vu%u4aoqz(yv!&5bbcg7%0ixw@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['www.bigspender.info', 'bigspender.info']
 
 
 # Application definition
