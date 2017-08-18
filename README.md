@@ -1,5 +1,11 @@
 # Setup
-1. clone this repo & cd into the project root
+1. get Repo
+- clone this repo
+- cd into the project root
+- switch to the local branch
+```
+git checkout local
+```
 
 2. use your virtual env tool of choice to create a python3 virtual environment. I use python3's native venv module.
 ```
