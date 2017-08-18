@@ -5,4 +5,4 @@ This accompanying front-end for this application can be found at https://github.
 
 ## Setup
 
-If you want to setup this project locally, please switch to the *local* branch. 
+If you want to setup this project locally, please switch to the *local* branch. https://github.com/jgpasch/django-todo/tree/local
