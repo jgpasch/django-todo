@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,12 +80,15 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+with open('./todo/config.json') as json_data:
+  localConfig = json.load(json_data)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todo_django_db',
-        'USER': 'john',
-        'PASSWORD': 'BigSpender4812',
+        'NAME': localConfig['database']['NAME'],
+        'USER': localConfig['database']['USER'],
+        'PASSWORD': localConfig['database']['PASSWORD'],
         'HOST': 'localhost',
         'PORT': ''
     }

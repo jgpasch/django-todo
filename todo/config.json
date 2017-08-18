@@ -1,0 +1,7 @@
+{
+  "database": {
+    "NAME": "todo_django_db",
+    "USER": "john",
+    "PASSWORD": "BigSpender4812"
+  }
+}

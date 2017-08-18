@@ -13,6 +13,5 @@ media
 
 .vscode
 todo-env
-
-#settings
-todo/settings.py
+venv
+env
