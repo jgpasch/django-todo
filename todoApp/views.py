@@ -21,11 +21,12 @@ class GroupViewSet(viewsets.ModelViewSet):
 class TodoViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated, TokenHasScope,)
     queryset = Todo.objects.all()
-    required_scopes = ['read', 'write'] 
+    required_scopes = ['read', 'write']
     serializer_class = TodoSerializer
 
     def perform_update(self, serializer):
         serializer.save()
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        gr = Group.objects.get(name=self.request.data['group'])
+        serializer.save(owner=self.request.user, group=gr)

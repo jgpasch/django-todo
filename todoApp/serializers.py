@@ -9,15 +9,16 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class TodoSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    group = serializers.ReadOnlyField(source='group.name')
 
     class Meta:
         model = Todo
-        fields = ('owner','id', 'title', 'note', 'completed')
+        fields = ('owner','id', 'title', 'note', 'completed', 'group')
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
-        fields = ('name', 'address', 'manager', 'parent_group', 'contact', 'phone', 'email')
+        fields = '__all__'
 
 class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
